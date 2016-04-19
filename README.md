@@ -74,6 +74,8 @@ quickGist({
 });
 ```
 
+Uses [language-classifier](https://github.com/tj/node-language-classifier) to guess file languages.
+
 ## License
 
 MIT © [Chris Contolini](https://contolini.com)

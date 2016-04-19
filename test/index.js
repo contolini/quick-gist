@@ -24,6 +24,16 @@ describe('quick-gist', function() {
       done();
     });
   });
+  it('should throw without options', function() {
+    assert.throws(function() {
+      quickGist();
+    });
+  });
+  it('should throw without content', function() {
+    assert.throws(function() {
+      quickGist({foo: 'bar'});
+    });
+  });
   it('should handle large gists', function(done) {
     var file = fs.readFileSync(path.join(__dirname, '../', 'lib', 'index.js'), 'utf8');
     quickGist({

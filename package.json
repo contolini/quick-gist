@@ -1,6 +1,6 @@
 {
   "name": "quick-gist",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Quickly create anonymous GitHub gists.",
   "homepage": "https://github.com/contolini/quick-gist",
   "author": {

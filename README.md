@@ -9,7 +9,8 @@ $ npm install --save quick-gist
 
 ## Usage
 
-Using GitHub Enterprise? Set your gist API endpoint with `QUICK_GIST_ENDPOINT` (e.g. `https://github.yourcompany.com/api/v3/gists`).
+Using GitHub Enterprise? Set your gist endpoint with `QUICK_GIST_ENDPOINT` (e.g. `https://github.yourcompany.com/api/v3/gists`).
+
 GitHub's public API at `https://api.github.com/gists` is used by default.
 
 ```js
@@ -24,6 +25,8 @@ quickGist({
   console.log(data);
 });
 ```
+
+Returns a whole lot of useful info:
 
 ```
 {

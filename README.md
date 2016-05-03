@@ -9,13 +9,17 @@ $ npm install --save quick-gist
 
 ## Usage
 
+Using GitHub Enterprise? Set your gist API endpoint with `QUICK_GIST_ENDPOINT` (e.g. `https://github.yourcompany.com/api/v3/gists`).
+GitHub's public API at `https://api.github.com/gists` is used by default.
+
 ```js
 var quickGist = require('quick-gist');
 
 quickGist({
   content: 'gists are fun',
-  description: 'This gist is the best', // optional
-  public: true // optional (defaults to false)
+  description: 'This gist is the best', // Optional
+  public: false // Whether the gist should be public or unlisted. Defaults to false (unlisted).
+  enterpriseOnly: false // Prohibit posting to GitHub.com. Defaults to false. Useful if you're posting company secrets.
 }, function(err, resp, data) {
   console.log(data);
 });

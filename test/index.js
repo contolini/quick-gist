@@ -34,6 +34,18 @@ describe('quick-gist', function() {
       quickGist({foo: 'bar'});
     });
   });
+  it('should throw if enterpriseOnly is true and no endpoint is set', function() {
+    delete process.env.QUICK_GIST_ENDPOINT
+    assert.throws(function() {
+      quickGist({content: 'bar', enterpriseOnly: true});
+    });
+  });
+  it('should throw if the endpoint is set to the public api', function() {
+    process.env.QUICK_GIST_ENDPOINT = 'https://api.github.com/gists'
+    assert.throws(function() {
+      quickGist({content: 'bar', enterpriseOnly: true});
+    });
+  });
   it('should handle large gists', function(done) {
     var file = fs.readFileSync(path.join(__dirname, '../', 'lib', 'index.js'), 'utf8');
     quickGist({

@@ -11,7 +11,7 @@ $ npm install --save quick-gist
 
 Using GitHub Enterprise? Set your gist endpoint with `QUICK_GIST_ENDPOINT` (e.g. `https://github.yourcompany.com/api/v3/gists`).
 
-GitHub's public API at `https://api.github.com/gists` is used by default.
+GitHub's public API at `https://api.github.com/gists` is used by default. Uses [language-classifier](https://github.com/tj/node-language-classifier) to guess file languages.
 
 ```js
 var quickGist = require('quick-gist');
@@ -19,8 +19,9 @@ var quickGist = require('quick-gist');
 quickGist({
   content: 'gists are fun',
   description: 'This gist is the best', // Optional
-  public: false // Whether the gist should be public or unlisted. Defaults to false (unlisted).
-  enterpriseOnly: false // Prohibit posting to GitHub.com. Defaults to false. Useful if you're posting company secrets.
+  public: false, // Whether the gist should be public or unlisted. Defaults to false (unlisted).
+  enterpriseOnly: false. // Prohibit posting to GitHub.com. Defaults to false. Useful if you're posting company secrets.
+  fileExtension: 'md' // Optionally force a file extension if you don't want to rely on language-classifier.
 }, function(err, resp, data) {
   console.log(data);
 });
@@ -80,8 +81,6 @@ quickGist({
   console.log(data);
 });
 ```
-
-Uses [language-classifier](https://github.com/tj/node-language-classifier) to guess file languages.
 
 ## License
 

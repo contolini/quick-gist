@@ -24,6 +24,25 @@ describe('quick-gist', function() {
       done();
     });
   });
+  it('should create a private gist with a custom file extension', function(done) {
+    quickGist({
+      content: 'for link in links:',
+      fileExtension: 'md'
+    }, function(err, resp, data) {
+      assert.equal(data.files['gist1.md'].filename, 'gist1.md');
+      done();
+    });
+  });
+  it('should create a public gist with a custom file extension', function(done) {
+    quickGist({
+      content: 'for link in links:',
+      fileExtension: 'foo',
+      public: true
+    }, function(err, resp, data) {
+      assert.equal(data.files['gist1.foo'].filename, 'gist1.foo');
+      done();
+    });
+  });
   it('should throw without options', function() {
     assert.throws(function() {
       quickGist();

@@ -20,7 +20,7 @@ quickGist({
   content: 'gists are fun',
   description: 'This gist is the best', // Optional
   public: false, // Whether the gist should be public or unlisted. Defaults to false (unlisted).
-  enterpriseOnly: false. // Prohibit posting to GitHub.com. Defaults to false. Useful if you're posting company secrets.
+  enterpriseOnly: false, // Prohibit posting to GitHub.com. Defaults to false. Useful if you're posting company secrets.
   fileExtension: 'md' // Optionally force a file extension if you don't want to rely on language-classifier.
 }, function(err, resp, data) {
   console.log(data);

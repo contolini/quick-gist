@@ -9,6 +9,8 @@ $ npm install --save quick-gist
 
 ## Usage
 
+**GitHub [deprecated anonymous gists](https://blog.github.com/2018-02-18-deprecation-notice-removing-anonymous-gist-creation/) so you'll need to authenticate.** :sob:
+
 Using GitHub Enterprise? Set your gist endpoint with `QUICK_GIST_ENDPOINT` (e.g. `https://github.yourcompany.com/api/v3/gists`).
 
 GitHub's public API at `https://api.github.com/gists` is used by default. Uses [language-classifier](https://github.com/tj/node-language-classifier) to guess file languages.
